@@ -32,22 +32,27 @@ Our preprocessed datasets for Amazon-Movie-TV are available on Huggingface: [ite
 To process your own dataset, please follow the following steps:
 
 1. Use the notebook in `data/proces_data_review.ipynb` to filter sessions and items with a small number of interactions, long descriptions, and split the sessions into train and test sets.
+
 2. Tokenize the item descriptions and session prompts with [Gemma](https://huggingface.co/google/gemma-2b-it) and [MxBai](https://huggingface.co/mixedbread-ai/mxbai-embed-large-v1) tokenizers by running:
 ```
 python ./data/tokenize_for_gemma_mxbai.py --hf_item_repo HF_ITEM_REPO --hf_gemma_sess_repo HF_GEMMA_SESS_REPO
 ```
 `HF_ITEM_REPO`: the huggingface repo to save the tokenized item descriptions using MxBai tokenizers.
+
 `HF_GEMMA_SESS_REPO`: the huggingface repo to save the tokenized sessions using Gemma tokenizers.
+
 3. Select the item that the user (for a session) would interact in the future and split the dataset into train/validation/test with:
 ```
 python ./data/reprocess_data.py --hf_gemma_sess_repo HF_GEMMA_SESS_REPO
 ```
 `HF_GEMMA_SESS_REPO`: the same huggingface repo with Gemma tokenizers as above.
+
 4. Retokenize for with Llama tokenizer to train Llama models:
 ```
 python ./data/reprocess_data_for_llama.py --hf_gemma_sess_repo HF_GEMMA_SESS_REPO --hf_llama_sess_repo HF_LLAMA_SESS_REPO
 ```
 `HF_GEMMA_SESS_REPO`: the same huggingface repo with Gemma tokenizers as above.
+
 `HF_LLAMA_SESS_REPO`: the huggingface repo to save the tokenized sessions using Llama tokenizers.
 
 ## Training
