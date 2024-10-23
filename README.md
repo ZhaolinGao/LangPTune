@@ -47,7 +47,7 @@ python ./data/reprocess_data.py --hf_gemma_sess_repo HF_GEMMA_SESS_REPO
 ```
 `HF_GEMMA_SESS_REPO`: the same huggingface repo with Gemma tokenizers as above.
 
-4. Retokenize for with Llama tokenizer to train Llama models:
+4. Retokenize for with [Llama](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) tokenizer to train Llama models:
 ```
 python ./data/reprocess_data_for_llama.py --hf_gemma_sess_repo HF_GEMMA_SESS_REPO --hf_llama_sess_repo HF_LLAMA_SESS_REPO
 ```
