@@ -84,18 +84,31 @@ accelerate launch --config_file accelerate_cfgs/deepspeed_config.yaml \
                       --lora_alpha 2048
 ```
 `num_processes`: number of GPUs to use.
+
 `num_lm_updates`: number of iterations to train the language model.
+
 `num_emb_updates`: number of iterations to train the embedding model.
+
 `num_iterations`: total number of iterations.
+
 `gradient_accumulation_steps`, `per_device_train_batch_size`: number of gradient accumulations and per device batch size. (batch size for language model = num_processes * gradient_accumulation_steps * per_device_train_batch_size)
+
 `emb_per_device_train_batch_size`: per device batch size for training the embedding model.
+
 `lr`: learning rate for the language model.
+
 `emb_lr`: embedding model learning rate.
+
 `task.query_dataset`: path to the tokenized sessions.
+
 `task.item_dataset`: path to the tokenized item descriptions.
+
 `reward_type`: metric to be used as reward (ndcg, mrr).
+
 `eta`: hyperparameter in the loss function.
+
 `kl_coef`: hyperparameter to control the KL regularization.
+
 Here we use LoRA to update the language model and perform full parameter tunning for the embedding model.
 
 Similarly, we can train the Llama model by running:
