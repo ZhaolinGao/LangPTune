@@ -57,7 +57,9 @@ python ./data/reprocess_data_for_llama.py --hf_gemma_sess_repo HF_GEMMA_SESS_REP
 
 ## Training
 
-We now can train the Gemma model by running:
+#### Gemma
+
+We now can train the Gemma model with [LoRA](https://arxiv.org/abs/2106.09685) by running:
 ```
 accelerate launch --config_file accelerate_cfgs/deepspeed_config.yaml \
                   --main_process_port 29080 --num_processes 4 \
@@ -109,7 +111,7 @@ accelerate launch --config_file accelerate_cfgs/deepspeed_config.yaml \
 
 `kl_coef`: hyperparameter to control the KL regularization.
 
-Here we use LoRA to update the language model and perform full parameter tunning for the embedding model.
+#### Llama
 
 Similarly, we can train the Llama model by running:
 ```
