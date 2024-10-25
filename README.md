@@ -1,4 +1,4 @@
-# End-to-end Training for Recommendation with Language-based User Profiles
+# [LangPTune](https://arxiv.org/abs/2410.18870): End-to-end Training for Recommendation with Language-based User Profiles
 Zhaolin Gao, Joyce Zhou, Yijia Dai, Thorsten Joachims
 
 ![front page](./figs/langptune.png)
