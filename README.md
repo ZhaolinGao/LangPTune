@@ -139,7 +139,19 @@ accelerate launch --config_file accelerate_cfgs/deepspeed_config.yaml \
 ```
 Here, we only train the last `num_layers_unfrozen` of the Llama model which keep other layer frozen and perform full parameter tunning for the embedding model.
 
-
+## Cite
+Please cite our paper if you use this implementation in your own work:
+```
+@misc{gao2024endtoendtrainingrecommendationlanguagebased,
+      title={End-to-end Training for Recommendation with Language-based User Profiles}, 
+      author={Zhaolin Gao and Joyce Zhou and Yijia Dai and Thorsten Joachims},
+      year={2024},
+      eprint={2410.18870},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR},
+      url={https://arxiv.org/abs/2410.18870}, 
+}
+```
 
 
 
