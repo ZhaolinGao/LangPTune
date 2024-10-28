@@ -5,6 +5,7 @@ Zhaolin Gao, Joyce Zhou, Yijia Dai, Thorsten Joachims
 
 ## Environment
 
+Requirements:
 ```
 torch>=2.1.0
 transformers>=4.34
@@ -22,6 +23,11 @@ wandb
 tensorboard
 pandas
 evaluate
+```
+
+To replicate the exact environment we used, we recommend installing it with the following command:
+```
+conda env create -f environment.yml
 ```
 
 ## Data Generation
